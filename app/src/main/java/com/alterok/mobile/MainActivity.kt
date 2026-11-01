@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                 Column(Modifier.fillMaxSize().background(Ink).windowInsetsPadding(WindowInsets.safeDrawing)) {
                     Row(Modifier.fillMaxWidth().background(Paper).height(42.dp).padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
                         Text("◢ ALTEROK / MOBILE  ///", color = Ink, fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Black, fontSize = 17.sp)
-                        Text("PAPER CIRCUIT INDUSTRIAL  •  REV 03", color = Ink, fontFamily = FontFamily.Monospace, fontSize = 11.sp)
+                        Text("PAPER CIRCUIT INDUSTRIAL  •  REV 04", color = Ink, fontFamily = FontFamily.Monospace, fontSize = 11.sp)
                     }
                     Row(Modifier.fillMaxSize().padding(8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         Column(Modifier.width(142.dp).fillMaxHeight().border(1.dp, Border).background(Panel).padding(5.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
@@ -86,7 +86,7 @@ class MainActivity : ComponentActivity() {
                             Spacer(Modifier.weight(1f))
                             Text("● LOCAL", color = Cyan, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
                             Text("○ ROBOT LINK OFF", color = Amber, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
-                            Text("REVISION 0.3", color = Faint, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
+                            Text("REVISION 0.4", color = Faint, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
                         }
                         Column(Modifier.weight(1f).fillMaxHeight(), verticalArrangement = Arrangement.spacedBy(7.dp)) {
                             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -95,7 +95,7 @@ class MainActivity : ComponentActivity() {
                             }
                             Box(Modifier.weight(1f)) {
                                 when(screen) {
-                                    "DESIGN" -> DesignScreen(onNotice = { notice = it }, onKrita = { openApp("org.krita", "https://play.google.com/store/apps/details?id=org.krita") }, onFiles = { openFiles() }, onBlender = { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://blenderandroid.github.io/"))) }, onCad = { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://materializr.com/"))) })
+                                    "DESIGN" -> BlueprintScreen(onNotice = { notice = it }, onKrita = { openApp("org.krita", "https://play.google.com/store/apps/details?id=org.krita") }, onFiles = { openFiles() }, onBlender = { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://blenderandroid.github.io/"))) }, onCad = { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://materializr.com/"))) })
                                     "HOME" -> HomeScreen(onDesign = { screen = "DESIGN" }, onFiles = { openFiles() }, onKrita = { openApp("org.krita", "https://play.google.com/store/apps/details?id=org.krita") })
                                     "CONTROL" -> ControlScreen()
                                     else -> SystemScreen(onSettings = { startActivity(Intent(Settings.ACTION_SETTINGS)) }, onFiles = { openFiles() })
@@ -268,7 +268,7 @@ private fun exportSketch(context: android.content.Context, strokes: List<StrokeD
         Instrument("BLUEPRINT / TERMINAL IDENT", Modifier.weight(1f).fillMaxHeight()) {
             BlueprintEmblem(Modifier.fillMaxWidth().weight(1f))
             Text("ALTEROK SYSTEMS   //   MOBILE STATION", color = Paper, fontFamily = FontFamily.Monospace, fontSize = 13.sp)
-            Text("REV 03  /  LOCAL DESIGN & CONTROL", color = Amber, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
+            Text("REV 04  /  LOCAL DESIGN & CONTROL", color = Amber, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
         }
     }
 }
@@ -316,7 +316,7 @@ private fun exportSketch(context: android.content.Context, strokes: List<StrokeD
         Instrument("TERMINAL INFO", Modifier.weight(1f)) {
             DataLine("APPLICATION", "ALTEROK MOBILE")
             DataLine("INTERFACE", "PAPER CIRCUIT")
-            DataLine("VERSION", "0.3.0")
+            DataLine("VERSION", "0.4.0")
             DataLine("ROBOT LINK", "NOT CONFIGURED", Amber)
             DataLine("PERFORMANCE", "NOT MONITORED", Amber)
         }
