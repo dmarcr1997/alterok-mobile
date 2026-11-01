@@ -169,7 +169,7 @@ fun BlueprintScreen(onNotice: (String) -> Unit, onKrita: () -> Unit, onFiles: ()
                         current?.let { objects.add(it) }; current = null
                     }, onDragCancel = { current = null })
                 }) {
-                drawIntoCanvas { c -> renderBlueprint(c.nativeCanvas, size.width, size.height, objects.toList() + listOfNotNull(current), grid, project, drawingNumber, revision, units, mmPerGrid) }
+                drawIntoCanvas { c -> renderBlueprint(c.nativeCanvas, size.width.toFloat(), size.height.toFloat(), objects.toList() + listOfNotNull(current), grid, project, drawingNumber, revision, units, mmPerGrid) }
             }
             Row(Modifier.fillMaxWidth().background(bpPanel).padding(horizontal = 8.dp, vertical = 5.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 Text("STYLUS / DRAG TO PLACE GEOMETRY", color = bpCyan, fontFamily = FontFamily.Monospace, fontSize = 10.sp)
