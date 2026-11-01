@@ -16,7 +16,6 @@ import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RectangleShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -188,7 +187,7 @@ class MainActivity : ComponentActivity() {
                     (strokes.toList() + if(current.isNotEmpty()) listOf(StrokeData(current, selectedColor, penWidth)) else emptyList()).forEach { stroke ->
                         if(stroke.points.size > 1) {
                             val path = Path().apply { moveTo(stroke.points.first().x, stroke.points.first().y); stroke.points.drop(1).forEach { lineTo(it.x,it.y) } }
-                            drawPath(path, stroke.color, style = Stroke(width = stroke.width, cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.PathJoin.Round))
+                            drawPath(path, stroke.color, style = Stroke(width = stroke.width, cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
                         } else if(stroke.points.isNotEmpty()) drawCircle(stroke.color, stroke.width / 2f, stroke.points.first())
                     }
                 }
